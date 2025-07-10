@@ -1,0 +1,9 @@
+name: flutter_starter_project_hooks
+description: Hook scripts for flutter_starter_project brick.
+version: 0.1.0
+
+environment:
+  sdk: ">=2.18.0 <4.0.0"
+
+dependencies:
+  mason: any
