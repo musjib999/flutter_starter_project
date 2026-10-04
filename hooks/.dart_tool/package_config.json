@@ -171,8 +171,8 @@
     }
   ],
   "generator": "pub",
-  "generatorVersion": "3.10.4",
+  "generatorVersion": "3.12.2",
   "flutterRoot": "file:///Users/mac/develop/flutter",
-  "flutterVersion": "3.38.5",
+  "flutterVersion": "3.44.5",
   "pubCache": "file:///Users/mac/.pub-cache"
 }
