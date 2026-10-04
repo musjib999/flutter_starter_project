@@ -27,18 +27,45 @@ Verify the installation:
 mason --version
 ```
 
-## 2. Initialize Mason in a Flutter project
+## 2. Create a Flutter project
+
+This brick generates files into an existing Flutter app. Create that app before you initialize Mason.
+
+Confirm Flutter is available:
+
+```bash
+flutter --version
+```
+
+Create a new project. The name must be lowercase, with words separated by underscores:
+
+```bash
+flutter create my_app
+```
+
+To set the organization identifier used in bundle IDs (for example `com.example`):
+
+```bash
+flutter create --org com.example my_app
+```
+
+Move into the new project. Later commands, including `mason init`, run from this directory (the folder that contains `pubspec.yaml`):
+
+```bash
+cd my_app
+```
+
+## 3. Initialize Mason in a Flutter project
 
 From the root of your Flutter project (where `pubspec.yaml` lives):
 
 ```bash
-cd /path/to/your/flutter/project
 mason init
 ```
 
 This creates a `mason.yaml` file in the project root.
 
-## 3. Register the `flutter_starter_project` brick
+## 4. Register the `flutter_starter_project` brick
 
 Open `mason.yaml` and add the brick under `bricks:`.
 
@@ -66,7 +93,7 @@ bricks:
       path: .
 ```
 
-## 4. Install the brick
+## 5. Install the brick
 
 Download and cache all registered bricks:
 
@@ -76,7 +103,7 @@ mason get
 
 Run this again whenever `mason.yaml` changes or the brick template is updated.
 
-## 5. Generate the project scaffold
+## 6. Generate the project scaffold
 
 Run the brick from the project root:
 
@@ -113,7 +140,7 @@ mason make flutter_starter_project --on-conflict skip
 mason make flutter_starter_project --on-conflict prompt
 ```
 
-## 6. Post-generation setup
+## 7. Post-generation setup
 
 The brick runs a **post-gen hook** that automatically:
 
@@ -160,7 +187,8 @@ Assets are placed in `assets/images/`.
 ```bash
 # Full setup from scratch
 flutter pub global activate mason_cli
-cd /path/to/your/flutter/project
+flutter create my_app
+cd my_app
 mason init
 # Edit mason.yaml to register flutter_starter_project
 mason get
